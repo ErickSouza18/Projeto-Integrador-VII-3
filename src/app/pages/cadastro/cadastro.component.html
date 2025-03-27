@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    Angular
+  </mat-toolbar>
+  
+  <mat-card>
+    <div class="titulo-card">Cadastro de Livros</div>
+  
+    <form (ngSubmit)="salvar()">
+      <mat-form-field class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="form.nome" name="nome" required>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-label>Categoria</mat-label>
+        <mat-select [(ngModel)]="form.categoria" name="categoria" required>
+          <mat-option value="A">Categoria A</mat-option>
+          <mat-option value="B">Categoria B</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-checkbox [(ngModel)]="form.ativo" name="ativo">Ativo</mat-checkbox>
+  
+      <mat-radio-group [(ngModel)]="form.tipo" name="tipo" class="full-width" required>
+        <mat-radio-button value="1">Tipo 1</mat-radio-button>
+        <mat-radio-button value="2">Tipo 2</mat-radio-button>
+      </mat-radio-group>
+  
+      <div class="botoes">
+        <button mat-raised-button color="primary" type="submit">Salvar</button>
+        <button mat-raised-button color="warn" class="cancelar-btn" type="button" (click)="cancelar()">Cancelar</button>
+        <button mat-raised-button color="accent" type="button" (click)="irParaListagem()">Ver Listagem</button>
+      </div>          
+    </form>
+  </mat-card>
+  
